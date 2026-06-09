@@ -30,17 +30,17 @@ Product Search
 
 
 
-1\. \[Test Summary](docs/test-summary.md)
+\- \[Test Summary](docs/test-summary.md)
 
-2\. \[Test Scenarios](docs/test-scenarios.md)
+\- \[Test Scenarios](docs/test-scenarios.md)
 
-3\. \[Test Cases](docs/test-cases.md)
+\- \[Test Cases](docs/test-cases.md)
 
-4\. \[Bug Reports](docs/bug-reports.md)
+\- \[Bug Reports](docs/bug-reports.md)
 
-5\. \[SQL Validation Design](docs/sql-validation-design.md)
+\- \[SQL Validation Design](docs/sql-validation-design.md)
 
-6\. \[Automation Scope](docs/automation-scope.md)
+\- \[Automation Scope](docs/automation-scope.md)
 
 
 
@@ -52,19 +52,15 @@ For the first test cycle of the Product Search module, 11 test scenarios and 11 
 
 
 
-| Result Type | Count |
+\- Passed: 8
 
-|---|---:|
+\- Failed: 0
 
-| Passed | 8 |
+\- Blocked: 1
 
-| Failed | 0 |
+\- Need Clarification: 2
 
-| Blocked | 1 |
-
-| Need Clarification | 2 |
-
-| Open Bugs | 1 |
+\- Open Bugs: 1
 
 
 
@@ -120,17 +116,19 @@ Two items required clarification because the expected behavior was not clearly d
 
 
 
-| Field | Details |
+Severity: Medium
 
-|---|---|
 
-| Severity | Medium |
 
-| Priority | Medium |
+Priority: Medium
 
-| Status | Open |
 
-| Related Test Case | TC-SEARCH-010 |
+
+Status: Open
+
+
+
+Related Test Case: TC-SEARCH-010
 
 
 
@@ -164,15 +162,11 @@ The project includes automation scope planning to identify which test cases are 
 
 
 
-| Automation Candidate | Count |
+\- Suitable for automation: 8
 
-|---|---:|
+\- Not recommended yet: 2
 
-| Suitable for automation | 8 |
-
-| Not recommended yet | 2 |
-
-| Blocked until bug fix | 1 |
+\- Blocked until bug fix: 1
 
 
 
@@ -197,4 +191,6 @@ The project includes automation scope planning to identify which test cases are 
 \- Automation scope planning
 
 \- Regression testing awareness
+
+
 
