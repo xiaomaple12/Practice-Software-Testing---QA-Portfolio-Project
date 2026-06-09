@@ -92,3 +92,7 @@ The project includes automation scope planning to identify which test cases are 
 - SQL validation thinking
 - Automation scope planning
 - Regression testing awareness
+
+- ## Additional Reference
+
+- Google Sheets test execution record: https://docs.google.com/spreadsheets/d/1RmrleJbF3qIx1X96Wy92Uo6Qf9AFELIoypBviZyopjo/edit?usp=sharing
