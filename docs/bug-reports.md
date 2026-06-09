@@ -2,15 +2,17 @@
 
 ## BUG-001: Hammer category filter returns no products even though Hammer products exist
 
-- Bug ID: BUG-001
-- Module: Product Search
-- Severity: Medium
-- Priority: Medium
-- Status: Open
-- Environment: Chrome on Windows, Practice Software Testing demo site
-- Related Test Case: TC-SEARCH-010
-- Reported By: Kris Hsiao
-- Reported Date: 2026-06-09
+| Field | Details |
+|---|---|
+| Bug ID | BUG-001 |
+| Module | Product Search |
+| Severity | Medium |
+| Priority | Medium |
+| Status | Open |
+| Environment | Chrome on Windows, Practice Software Testing demo site |
+| Related Test Case | TC-SEARCH-010 |
+| Reported By | Kris Hsiao |
+| Reported Date | 2026-06-09 |
 
 ## Precondition
 
