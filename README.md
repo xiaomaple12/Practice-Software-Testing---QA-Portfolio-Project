@@ -52,19 +52,19 @@ For the first test cycle of the Product Search module, 11 test scenarios and 11 
 
 
 
-Result summary:
+| Result Type | Count |
 
+|---|---:|
 
+| Passed | 8 |
 
-\* Passed: 8
+| Failed | 0 |
 
-\* Failed: 0
+| Blocked | 1 |
 
-\* Blocked: 1
+| Need Clarification | 2 |
 
-\* Need Clarification: 2
-
-\* Open Bugs: 1
+| Open Bugs | 1 |
 
 
 
@@ -72,15 +72,43 @@ Result summary:
 
 
 
-The Product Search function worked correctly for full keyword search, partial keyword search, non-existing English keyword search, reset behavior, Enter key search, case-insensitive search, leading and trailing spaces, and pagination update.
+The Product Search function worked correctly for the following behaviors:
 
 
 
-One issue was found in the Hammer category filter. The Hammer category filter returned no products even though Hammer-related products existed in the default product list and could be found by searching for "Hammer".
+\- Full keyword search
+
+\- Partial keyword search
+
+\- Non-existing English keyword search
+
+\- Reset behavior
+
+\- Enter key search
+
+\- Case-insensitive search
+
+\- Leading and trailing spaces
+
+\- Pagination update
 
 
 
-Two items required clarification because the expected behavior was not clearly defined: multiple keyword search and localized keyword search.
+One issue was found in the Hammer category filter.
+
+
+
+The Hammer category filter returned no products even though Hammer-related products existed in the default product list and could be found by searching for `Hammer`.
+
+
+
+Two items required clarification because the expected behavior was not clearly defined:
+
+
+
+\- Multiple keyword search
+
+\- Localized keyword search
 
 
 
@@ -88,15 +116,21 @@ Two items required clarification because the expected behavior was not clearly d
 
 
 
-BUG-001: Hammer category filter returns no products even though Hammer products exist.
+\*\*BUG-001: Hammer category filter returns no products even though Hammer products exist\*\*
 
 
 
-Severity: Medium
+| Field | Details |
 
-Priority: Medium
+|---|---|
 
-Status: Open
+| Severity | Medium |
+
+| Priority | Medium |
+
+| Status | Open |
+
+| Related Test Case | TC-SEARCH-010 |
 
 
 
@@ -112,13 +146,13 @@ Examples include:
 
 
 
-\* Verifying search result counts from the products table.
+\- Verifying search result counts from the products table.
 
-\* Checking partial keyword search results.
+\- Checking partial keyword search results.
 
-\* Confirming no-result search behavior.
+\- Confirming no-result search behavior.
 
-\* Investigating whether the Hammer category issue is caused by product data, category mapping, API behavior, or UI filtering logic.
+\- Investigating whether the Hammer category issue is caused by product data, category mapping, API behavior, or UI filtering logic.
 
 
 
@@ -130,15 +164,15 @@ The project includes automation scope planning to identify which test cases are 
 
 
 
-Automation planning result:
+| Automation Candidate | Count |
 
+|---|---:|
 
+| Suitable for automation | 8 |
 
-\* Suitable for automation: 8 test cases
+| Not recommended yet | 2 |
 
-\* Not recommended yet: 2 test cases
-
-\* Blocked until bug fix: 1 test case
+| Blocked until bug fix | 1 |
 
 
 
@@ -146,21 +180,21 @@ Automation planning result:
 
 
 
-\* STLC-based QA workflow
+\- STLC-based QA workflow
 
-\* Manual test scenario design
+\- Manual test scenario design
 
-\* Test case writing and execution
+\- Test case writing and execution
 
-\* Bug reporting
+\- Bug reporting
 
-\* Requirement clarification
+\- Requirement clarification
 
-\* Test summary reporting
+\- Test summary reporting
 
-\* SQL validation thinking
+\- SQL validation thinking
 
-\* Automation scope planning
+\- Automation scope planning
 
-\* Regression testing awareness
+\- Regression testing awareness
 
