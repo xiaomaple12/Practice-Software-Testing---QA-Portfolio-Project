@@ -22,13 +22,15 @@ Kris Hsiao
 
 ## Test Execution Result
 
-- Total Scenarios: 11
-- Total Test Cases: 11
-- Passed: 8
-- Failed: 0
-- Blocked: 1
-- Need Clarification: 2
-- Open Bugs: 1
+| Result Type | Count |
+|---|---:|
+| Total Scenarios | 11 |
+| Total Test Cases | 11 |
+| Passed | 8 |
+| Failed | 0 |
+| Blocked | 1 |
+| Need Clarification | 2 |
+| Open Bugs | 1 |
 
 ## Test Scope
 
