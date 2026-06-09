@@ -16,11 +16,13 @@ Each test case includes test data, test steps, expected result, actual result, a
 
 ## Test Case Summary
 
-- Passed: 8
-- Failed: 0
-- Blocked: 1
-- Need Clarification: 2
-- Total Test Cases: 11
+| Status | Count |
+|---|---:|
+| Passed | 8 |
+| Failed | 0 |
+| Blocked | 1 |
+| Need Clarification | 2 |
+| Total Test Cases | 11 |
 
 ## Test Case List
 
