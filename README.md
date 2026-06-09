@@ -1,0 +1,83 @@
+# Practice Software Testing - QA Portfolio Project
+
+## Project Overview
+
+This project is a QA portfolio project based on the Practice Software Testing demo website.
+
+The goal of this project is to demonstrate a complete QA workflow using the STLC process, including test scenario design, test case writing, manual test execution, bug reporting, test summary reporting, SQL validation design, and automation scope planning.
+
+Website under test: https://practicesoftwaretesting.com/
+
+## Tested Module
+
+Product Search
+
+## QA Documents Created
+
+1. Test Scenarios
+2. Test Cases
+3. Bug Reports
+4. Test Summary
+5. SQL Validation Design
+6. Automation Scope
+
+## Test Execution Summary
+
+For the first test cycle of the Product Search module, 11 test scenarios and 11 test cases were executed.
+
+Result summary:
+
+* Passed: 8
+* Failed: 0
+* Blocked: 1
+* Need Clarification: 2
+* Open Bugs: 1
+
+## Key Findings
+
+The Product Search function worked correctly for full keyword search, partial keyword search, non-existing English keyword search, reset behavior, Enter key search, case-insensitive search, leading and trailing spaces, and pagination update.
+
+One issue was found in the Hammer category filter. The Hammer category filter returned no products even though Hammer-related products existed in the default product list and could be found by searching for "Hammer".
+
+Two items required clarification because the expected behavior was not clearly defined: multiple keyword search and localized keyword search.
+
+## Bug Report Example
+
+BUG-001: Hammer category filter returns no products even though Hammer products exist.
+
+Severity: Medium
+Priority: Medium
+Status: Open
+
+## SQL Validation Design
+
+This project also includes SQL validation design to show how UI test results could be verified with database queries if database access were available.
+
+Examples include:
+
+* Verifying search result counts from the products table.
+* Checking partial keyword search results.
+* Confirming no-result search behavior.
+* Investigating whether the Hammer category issue is caused by product data, category mapping, API behavior, or UI filtering logic.
+
+## Automation Scope
+
+The project includes automation scope planning to identify which test cases are suitable for future Playwright automation.
+
+Automation planning result:
+
+* Suitable for automation: 8 test cases
+* Not recommended yet: 2 test cases
+* Blocked until bug fix: 1 test case
+
+## Skills Demonstrated
+
+* STLC-based QA workflow
+* Manual test scenario design
+* Test case writing and execution
+* Bug reporting
+* Requirement clarification
+* Test summary reporting
+* SQL validation thinking
+* Automation scope planning
+* Regression testing awareness
