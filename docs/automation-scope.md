@@ -10,101 +10,29 @@ The goal is not to automate every test case immediately, but to decide which cas
 
 Product Search
 
-## Automation Scope Summary
+### Automation Scope Summary
 
-- Yes: 8
-- No: 2
-- Blocked: 1
+| Automation Candidate | Count |
+|---|---:|
+| Yes | 8 |
+| No | 2 |
+| Blocked | 1 |
 
 ## Automation Scope List
 
-### AUTO-SEARCH-001
-
-- Related Test Case: TC-SEARCH-001
-- Automation Candidate: Yes
-- Priority: High
-- Suggested Automation Type: UI Automation with Playwright
-- Reason: Full keyword search is a stable and important core search function.
-
-### AUTO-SEARCH-002
-
-- Related Test Case: TC-SEARCH-002
-- Automation Candidate: Yes
-- Priority: High
-- Suggested Automation Type: UI Automation with Playwright
-- Reason: Partial keyword search is an important search behavior and should remain stable after future changes.
-
-### AUTO-SEARCH-003
-
-- Related Test Case: TC-SEARCH-003
-- Automation Candidate: Yes
-- Priority: Medium
-- Suggested Automation Type: UI Automation with Playwright
-- Reason: No-result behavior should be verified to make sure users receive clear feedback when no products match the keyword.
-
-### AUTO-SEARCH-004
-
-- Related Test Case: TC-SEARCH-004
-- Automation Candidate: Yes
-- Priority: High
-- Suggested Automation Type: UI Automation with Playwright
-- Reason: Reset behavior is important because users need a reliable way to clear search results and return to the default product list.
-
-### AUTO-SEARCH-005
-
-- Related Test Case: TC-SEARCH-005
-- Automation Candidate: Yes
-- Priority: High
-- Suggested Automation Type: UI Automation with Playwright
-- Reason: Enter key search is an important user interaction and should behave the same as clicking the Search button.
-
-### AUTO-SEARCH-006
-
-- Related Test Case: TC-SEARCH-006
-- Automation Candidate: No
-- Priority: Low
-- Suggested Automation Type: Not recommended yet
-- Reason: Multiple keyword search behavior is not clearly defined yet, so it should not be automated until the expected behavior is clarified.
-
-### AUTO-SEARCH-007
-
-- Related Test Case: TC-SEARCH-007
-- Automation Candidate: Yes
-- Priority: Medium
-- Suggested Automation Type: UI Automation with Playwright
-- Reason: Case-insensitive search is a common search requirement and should remain stable after future changes.
-
-### AUTO-SEARCH-008
-
-- Related Test Case: TC-SEARCH-008
-- Automation Candidate: Yes
-- Priority: Medium
-- Suggested Automation Type: UI Automation with Playwright
-- Reason: Search input trimming is important because users may accidentally enter spaces before or after the keyword.
-
-### AUTO-SEARCH-009
-
-- Related Test Case: TC-SEARCH-009
-- Automation Candidate: No
-- Priority: Low
-- Suggested Automation Type: Not recommended yet
-- Reason: Localized keyword search behavior is not clearly defined yet, so it should not be automated until the expected behavior is clarified.
-
-### AUTO-SEARCH-010
-
-- Related Test Case: TC-SEARCH-010
-- Automation Candidate: Blocked
-- Priority: Medium
-- Suggested Automation Type: UI Automation with Playwright after bug fix
-- Reason: The test is currently blocked by BUG-001 because the Hammer category filter returns no products.
-
-### AUTO-SEARCH-011
-
-- Related Test Case: TC-SEARCH-011
-- Automation Candidate: Yes
-- Priority: Medium
-- Suggested Automation Type: UI Automation with Playwright
-- Reason: Pagination behavior after searching should be verified because search result count affects whether pagination should be displayed.
+| Automation ID | Related Test Case | Automation Candidate | Priority | Suggested Automation Type | Reason |
+|---|---|---|---|---|---|
+| AUTO-SEARCH-001 | TC-SEARCH-001 | Yes | High | UI Automation with Playwright | Full keyword search is a stable and important core search function. |
+| AUTO-SEARCH-002 | TC-SEARCH-002 | Yes | High | UI Automation with Playwright | Partial keyword search is an important search behavior and should remain stable after future changes. |
+| AUTO-SEARCH-003 | TC-SEARCH-003 | Yes | Medium | UI Automation with Playwright | No-result behavior should be verified to make sure users receive clear feedback when no products match the keyword. |
+| AUTO-SEARCH-004 | TC-SEARCH-004 | Yes | High | UI Automation with Playwright | Reset behavior is important because users need a reliable way to clear search results and return to the default product list. |
+| AUTO-SEARCH-005 | TC-SEARCH-005 | Yes | High | UI Automation with Playwright | Enter key search is an important user interaction and should behave the same as clicking the Search button. |
+| AUTO-SEARCH-006 | TC-SEARCH-006 | No | Low | Not recommended yet | Multiple keyword search behavior is not clearly defined yet, so it should not be automated until the expected behavior is clarified. |
+| AUTO-SEARCH-007 | TC-SEARCH-007 | Yes | Medium | UI Automation with Playwright | Case-insensitive search is a common search requirement and should remain stable after future changes. |
+| AUTO-SEARCH-008 | TC-SEARCH-008 | Yes | Medium | UI Automation with Playwright | Search input trimming is important because users may accidentally enter spaces before or after the keyword. |
+| AUTO-SEARCH-009 | TC-SEARCH-009 | No | Low | Not recommended yet | Localized keyword search behavior is not clearly defined yet, so it should not be automated until the expected behavior is clarified. |
+| AUTO-SEARCH-010 | TC-SEARCH-010 | Blocked | Medium | UI Automation with Playwright after bug fix | The test is currently blocked by BUG-001 because the Hammer category filter returns no products. |
+| AUTO-SEARCH-011 | TC-SEARCH-011 | Yes | Medium | UI Automation with Playwright | Pagination behavior after searching should be verified because search result count affects whether pagination should be displayed. |
 
 ## Recommended Automation Priority
 
