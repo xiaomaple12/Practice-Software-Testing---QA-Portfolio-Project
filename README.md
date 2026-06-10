@@ -105,6 +105,9 @@ The project includes automation scope planning to identify which test cases are 
 - SQL validation thinking
 - Automation scope planning
 - Regression testing awareness
+- Chrome DevTools inspection
+- API request and response observation
+- Bug evidence collection with DevTools
 
 - ## Additional Reference
 
