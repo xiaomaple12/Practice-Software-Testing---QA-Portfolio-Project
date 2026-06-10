@@ -1,8 +1,8 @@
-\# Chrome DevTools and HTTP / REST API Basics
+ # Chrome DevTools and HTTP / REST API Basics
 
 
 
-\## 1. Chrome DevTools
+ ## 1. Chrome DevTools
 
 
 
@@ -14,11 +14,11 @@ As a QA tester, I can use DevTools to check whether an issue is caused by the UI
 
 
 
-\## 2. Main DevTools Panels
+ ## 2. Main DevTools Panels
 
 
 
-\### Elements
+ ### Elements
 
 
 
@@ -30,7 +30,7 @@ QA can use it to check whether buttons, input fields, error messages, or hidden 
 
 
 
-\### Console
+ ### Console
 
 
 
@@ -42,7 +42,7 @@ If a feature does not work and Console shows a red error, the error message can 
 
 
 
-\### Network
+ ### Network
 
 
 
@@ -54,11 +54,11 @@ QA can use Network to check request URL, request method, status code, request pa
 
 
 
-\## 3. HTTP / REST API Basics
+ ## 3. HTTP / REST API Basics
 
 
 
-\### Request
+ ### Request
 
 
 
@@ -78,7 +78,7 @@ This means the frontend asks the backend to search for products with the keyword
 
 
 
-\### Response
+ ### Response
 
 
 
@@ -94,7 +94,7 @@ The backend returns total = 6 and product data for Hammer-related products.
 
 
 
-\### HTTP Methods
+ ### HTTP Methods
 
 
 
@@ -114,7 +114,7 @@ DELETE: Delete data.
 
 
 
-\## 4. Common Status Codes
+ ## 4. Common Status Codes
 
 
 
@@ -142,7 +142,7 @@ DELETE: Delete data.
 
 
 
-\## 5. Headers
+ ## 5. Headers
 
 
 
@@ -162,7 +162,7 @@ Authorization: Usually contains a Bearer token for authenticated requests.
 
 
 
-\## 6. Payload / Body
+ ## 6. Payload / Body
 
 
 
@@ -178,7 +178,7 @@ If the UI shows quantity 3 but the payload sends quantity 1, the issue may be re
 
 
 
-\## 7. Token / Bearer Token
+ ## 7. Token / Bearer Token
 
 
 
@@ -202,7 +202,7 @@ QA can check whether authenticated APIs include the Authorization header.
 
 
 
-\## 8. QA Debugging Logic
+ ## 8. QA Debugging Logic
 
 
 
