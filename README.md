@@ -8,6 +8,19 @@ The goal of this project is to demonstrate a complete QA workflow using the STLC
 
 Website under test: https://practicesoftwaretesting.com/
 
+## DevTools and HTTP Basics
+
+This project also includes Chrome DevTools and HTTP / REST API learning notes.
+
+During testing, I practiced using Chrome DevTools to inspect UI elements, Console errors, Network requests, request methods, status codes, query parameters, request payloads, response bodies, headers, and token-related behavior.
+
+I also used the Network panel to compare API responses with UI results. For example, when testing product search, I checked whether the search keyword was sent correctly, whether the API returned `200 OK`, whether the response total matched the UI result, and whether no-result behavior was handled correctly.
+
+Related note:
+
+* [Chrome DevTools and HTTP / REST API Basics](notes/devtools-http-basics.md)
+
+
 ## Tested Module
 
 Product Search
