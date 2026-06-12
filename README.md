@@ -16,9 +16,13 @@ During testing, I practiced using Chrome DevTools to inspect UI elements, Consol
 
 I also used the Network panel to compare API responses with UI results. For example, when testing product search, I checked whether the search keyword was sent correctly, whether the API returned `200 OK`, whether the response total matched the UI result, and whether no-result behavior was handled correctly.
 
-Related note:
+I also practiced collecting DevTools evidence for bug reports, including Console errors, Network request details, status codes, payloads, response bodies, and initial issue analysis.
+
+Related notes:
 
 * [Chrome DevTools and HTTP / REST API Basics](notes/devtools-http-basics.md)
+* [DevTools Bug Report Evidence Notes](notes/bug-report-evidence-notes.md)
+
 
 
 ## Tested Module
@@ -108,6 +112,7 @@ The project includes automation scope planning to identify which test cases are 
 - Chrome DevTools inspection
 - API request and response observation
 - Bug evidence collection with DevTools
+- Bug report evidence collection with Chrome DevTools
 
 - ## Additional Reference
 
