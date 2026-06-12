@@ -1,8 +1,8 @@
-\# DevTools Bug Report Evidence Notes
+ # DevTools Bug Report Evidence Notes
 
 
 
-\## Why DevTools Evidence Matters
+ ## Why DevTools Evidence Matters
 
 
 
@@ -14,15 +14,15 @@ DevTools evidence helps developers understand whether the issue may be related t
 
 
 
-\---
+ ---
 
 
 
-\## Useful DevTools Areas for Bug Investigation
+ ## Useful DevTools Areas for Bug Investigation
 
 
 
-\### Elements
+ ### Elements
 
 
 
@@ -34,7 +34,7 @@ QA can use Elements to check whether an error message exists but is hidden, or w
 
 
 
-\### Console
+ ### Console
 
 
 
@@ -50,13 +50,13 @@ Useful Console evidence includes:
 
 
 
-\* Error message
+ * Error message
 
-\* Error type
+ * Error type
 
-\* When the error appeared
+ * When the error appeared
 
-\* Screenshot of the Console error
+ * Screenshot of the Console error
 
 
 
@@ -72,7 +72,7 @@ No related console error was observed.
 
 
 
-\### Network
+ ### Network
 
 
 
@@ -84,29 +84,29 @@ Useful Network evidence includes:
 
 
 
-\* Request URL
+ * Request URL
 
-\* Request method
+ * Request method
 
-\* Status code
+ * Status code
 
-\* Query parameters
+ * Query parameters
 
-\* Request payload
+ * Request payload
 
-\* Response body
+ * Response body
 
-\* Authorization header
+ * Authorization header
 
-\* Timing of the request
-
-
-
-\---
+ * Timing of the request
 
 
 
-\## Bug Report Evidence Checklist
+ ---
+
+
+
+ ## Bug Report Evidence Checklist
 
 
 
@@ -114,37 +114,37 @@ A complete bug report can include:
 
 
 
-\* Bug title
+ * Bug title
 
-\* Test environment
+ * Test environment
 
-\* Precondition
+ * Precondition
 
-\* Steps to reproduce
+ * Steps to reproduce
 
-\* Expected result
+ * Expected result
 
-\* Actual result
+ * Actual result
 
-\* Screenshot or screen recording
+ * Screenshot or screen recording
 
-\* Console error
+ * Console error
 
-\* Network request / response
+ * Network request / response
 
-\* Severity
+ * Severity
 
-\* Priority
+ * Priority
 
-\* Notes
-
-
-
-\---
+ * Notes
 
 
 
-\## Debugging Logic
+ ---
+
+
+
+ ## Debugging Logic
 
 
 
@@ -180,15 +180,15 @@ If the API returns 500 Internal Server Error, the issue may be related to backen
 
 
 
-\---
+ ---
 
 
 
-\## Practice Scenarios
+ ## Practice Scenarios
 
 
 
-\### Login failure without error message
+ ### Login failure without error message
 
 
 
@@ -196,7 +196,7 @@ If POST /login returns 401 Unauthorized and the response body includes an error 
 
 
 
-\### Search button does not respond
+ ### Search button does not respond
 
 
 
@@ -204,7 +204,7 @@ If the user clicks the Search button but no search request appears in the Networ
 
 
 
-\### Registration succeeds but database has no new user
+ ### Registration succeeds but database has no new user
 
 
 
@@ -212,7 +212,7 @@ If POST /register returns success but SQL verification shows that the user was n
 
 
 
-\### Order is created but not displayed in order list
+ ### Order is created but not displayed in order list
 
 
 
@@ -220,7 +220,7 @@ If POST /orders returns success and GET /orders includes the new order, but the 
 
 
 
-\### API returns 500 and UI shows blank page
+ ### API returns 500 and UI shows blank page
 
 
 
@@ -228,11 +228,11 @@ If GET /products returns 500 Internal Server Error and the UI only shows a blank
 
 
 
-\---
+ ---
 
 
 
-\## Summary
+ ## Summary
 
 
 
