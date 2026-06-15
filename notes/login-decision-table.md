@@ -1,4 +1,4 @@
-\# Login Decision Table
+ # Login Decision Table
 
 
 
@@ -6,35 +6,35 @@ This document records the decision table and related test cases for the login fu
 
 
 
-\## Conditions
+ ## Conditions
 
 
 
-\* The account is correct.
+ * The account is correct.
 
-\* The password is correct.
+ * The password is correct.
 
-\* The account is locked.
-
-
-
-\## Actions
+ * The account is locked.
 
 
 
-\* Login succeeds and the user enters the member page.
-
-\* Login fails and an account or password error message is displayed.
-
-\* Login fails and an account locked message is displayed.
+ ## Actions
 
 
 
-\## Decision Table
+ * Login succeeds and the user enters the member page.
+
+ * Login fails and an account or password error message is displayed.
+
+ * Login fails and an account locked message is displayed.
 
 
 
-`-` means \*\*Don't Care\*\*. The condition does not affect the result for that rule.
+ ## Decision Table
+
+
+
+`-` means  * *Don't Care * *. The condition does not affect the result for that rule.
 
 
 
@@ -56,111 +56,111 @@ This document records the decision table and related test cases for the login fu
 
 
 
-\## Test Cases Derived from the Decision Table
+ ## Test Cases Derived from the Decision Table
 
 
 
-\### TC-LOGIN-DT-001 — Valid Account and Password
+ ### TC-LOGIN-DT-001 — Valid Account and Password
 
 
 
-\*\*Test Data\*\*
+ * *Test Data * *
 
 
 
-\* Account: `admin@gmail.com`
+ * Account: `admin@gmail.com`
 
-\* Password: `admin123`
+ * Password: `admin123`
 
-\* Account Status: `Unlocked`
+ * Account Status: `Unlocked`
 
 
 
-\*\*Expected Result\*\*
+ * *Expected Result * *
 
 
 
-\* Login succeeds.
+ * Login succeeds.
 
-\* The user enters the member page.
+ * The user enters the member page.
 
 
 
-\### TC-LOGIN-DT-002 — Valid Account with Incorrect Password
+ ### TC-LOGIN-DT-002 — Valid Account with Incorrect Password
 
 
 
-\*\*Test Data\*\*
+ * *Test Data * *
 
 
 
-\* Account: `admin@gmail.com`
+ * Account: `admin@gmail.com`
 
-\* Password: `wrongpassword`
+ * Password: `wrongpassword`
 
-\* Account Status: `Unlocked`
+ * Account Status: `Unlocked`
 
 
 
-\*\*Expected Result\*\*
+ * *Expected Result * *
 
 
 
-\* Login fails.
+ * Login fails.
 
-\* The system displays an account or password error message.
+ * The system displays an account or password error message.
 
 
 
-\### TC-LOGIN-DT-003 — Locked Account with Correct Password
+ ### TC-LOGIN-DT-003 — Locked Account with Correct Password
 
 
 
-\*\*Test Data\*\*
+ * *Test Data * *
 
 
 
-\* Account: `lockeduser@gmail.com`
+ * Account: `lockeduser@gmail.com`
 
-\* Password: `locked123`
+ * Password: `locked123`
 
-\* Account Status: `Locked`
+ * Account Status: `Locked`
 
 
 
-\*\*Expected Result\*\*
+ * *Expected Result * *
 
 
 
-\* Login fails.
+ * Login fails.
 
-\* The system displays an account locked message.
+ * The system displays an account locked message.
 
 
 
-\### TC-LOGIN-DT-004 — Invalid Account and Password
+ ### TC-LOGIN-DT-004 — Invalid Account and Password
 
 
 
-\*\*Test Data\*\*
+ * *Test Data * *
 
 
 
-\* Account: `invalid@gmail.com`
+ * Account: `invalid@gmail.com`
 
-\* Password: `wrongpassword`
+ * Password: `wrongpassword`
 
-\* Account Status: `Unlocked`
+ * Account Status: `Unlocked`
 
 
 
-\*\*Expected Result\*\*
+ * *Expected Result * *
 
 
 
-\* Login fails.
+ * Login fails.
 
-\* The system displays an account or password error message.
+ * The system displays an account or password error message.
 
 
 
