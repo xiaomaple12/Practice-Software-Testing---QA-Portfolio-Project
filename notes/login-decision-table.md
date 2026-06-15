@@ -39,19 +39,12 @@ This document records the decision table and related test cases for the login fu
 
 
 | Condition / Action             | Rule 1 | Rule 2 | Rule 3 | Rule 4 |
-
 | ------------------------------ | ------ | ------ | ------ | ------ |
-
 | Account is correct             | Yes    | Yes    | Yes    | No     |
-
 | Password is correct            | Yes    | No     | -      | -      |
-
 | Account is locked              | No     | No     | Yes    | -      |
-
 | Login succeeds                 | Yes    | No     | No     | No     |
-
 | Show account or password error | No     | Yes    | No     | Yes    |
-
 | Show account locked message    | No     | No     | Yes    | No     |
 
 
