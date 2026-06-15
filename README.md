@@ -22,7 +22,7 @@ Related notes:
 
 * [Chrome DevTools and HTTP / REST API Basics](notes/devtools-http-basics.md)
 * [DevTools Bug Report Evidence Notes](notes/bug-report-evidence-notes.md)
-
+* [Test Design Techniques](notes/test-design-techniques.md)
 
 
 ## Tested Module
