@@ -29,7 +29,7 @@ The goal is to identify what search behaviors should be tested before writing de
 | TS-SEARCH-009 | Product Search | Verify the system behavior when searching with localized keywords. | Low |
 | TS-SEARCH-010 | Product Search | Verify that search and category filters work together correctly. | Medium |
 | TS-SEARCH-011 | Product Search | Verify that pagination is updated correctly after searching. | Medium |
-
+| TS-SEARCH-012 | Product Search | Verify that the Hammer category filter displays all products belonging to the Hammer category. | High |
 ## Notes
 
 These scenarios cover core search behavior, input handling, filter interaction, and pagination behavior.
