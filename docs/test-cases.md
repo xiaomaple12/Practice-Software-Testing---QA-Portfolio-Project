@@ -383,11 +383,17 @@ This test case should be confirmed with PM / PO / BA before marking it as Pass o
 
 ### TC-SEARCH-010: Search with category filter
 
-- Related Scenario: TS-SEARCH-010
-- Module: Product Search
-- Priority: Medium
-- Test Data: Hammer category filter
-- Status: Blocked
+* Related Scenario: TS-SEARCH-010
+* Module: Product Search
+* Priority: Medium
+* Test Data: Hammer category filter and search keyword `hammer`
+* Status: Fail
+* Test Cycle: Cycle 2
+* Test Date: 2026-06-22
+
+#### Precondition
+
+User is on the product listing page at https://practicesoftwaretesting.com/.
 
 #### Test Steps
 
@@ -395,42 +401,53 @@ This test case should be confirmed with PM / PO / BA before marking it as Pass o
 2. Locate the Filters section on the left side of the page.
 3. Under By category, find Hand Tools.
 4. Select the Hammer category checkbox.
-5. Observe the product list.
-6. If Hammer-related products are displayed, enter a Hammer-related keyword in the search input field.
-7. Click the Search button.
-8. Observe whether the search keyword and category filter work together correctly.
+5. Verify that 7 Hammer-category products are displayed, including `Sledgehammer`.
+6. Keep the Hammer category selected.
+7. Enter `hammer` into the search input field.
+8. Trigger the search.
+9. Observe the displayed product count and product names.
 
 #### Expected Result
 
-After selecting the Hammer category filter, the page should display Hammer-related products.
+The page should display products that satisfy both the selected Hammer category and the search keyword `hammer`.
 
-After applying search with the Hammer category filter, the displayed products should match both the selected category and the search keyword.
+All matching Hammer-category products whose names contain `hammer` should be displayed.
+
+`Sledgehammer` should be included in the combined filter results.
 
 #### Actual Result
 
-After selecting the Hammer category checkbox, the page displayed `There are no products found.`
+With the Hammer category filter selected, the page initially displayed 7 products, including `Sledgehammer`.
 
-No Hammer-related products were displayed.
+After entering `hammer` while keeping the Hammer category selected, the page displayed only 6 products.
 
-The test could not continue to verify search and category filter combination behavior.
+`Sledgehammer` was not included in the combined search and category filter results.
+
+The combined filtering result was incomplete.
 
 #### Notes
 
-The Hammer category filter appears to return no products even though Hammer-related products exist in the default product list.
+Retested in Cycle 2.
 
-A separate bug report was created: BUG-001.
+The Hammer category filter initially displayed 7 products, including `Sledgehammer`.
 
-This test case is blocked until BUG-001 is fixed.
+When `hammer` was searched while the Hammer category remained selected, only 6 products were displayed.
+
+`Sledgehammer` was missing from the combined filter results.
+
+Related bug: BUG-002.
 
 ---
 
 ### TC-SEARCH-011: Verify pagination after searching
 
-- Related Scenario: TS-SEARCH-011
-- Module: Product Search
-- Priority: Medium
-- Test Data: Pliers
-- Status: Pass
+* Related Scenario: TS-SEARCH-011
+* Module: Product Search
+* Priority: Medium
+* Test Data: Pliers
+* Status: Pass
+* Test Cycle: Cycle 2
+* Test Date: 2026-06-22
 
 #### Test Steps
 
@@ -461,8 +478,97 @@ The search results fit on one page.
 
 #### Notes
 
-Pagination was updated correctly after searching.
+Retested in Cycle 2.
 
-No unnecessary pagination was displayed when the search result count was small.
+Result remained consistent with Cycle 1.
+
+---
+
+### TC-SEARCH-012: Verify that searching for Hammer includes Sledgehammer
+
+* Related Scenario: TS-SEARCH-002
+* Module: Product Search
+* Priority: High
+* Test Data: Hammer
+* Status: Fail
+* Test Cycle: Cycle 2
+* Test Date: 2026-06-22
+
+#### Precondition
+
+User is on the product listing page at https://practicesoftwaretesting.com/.
+
+#### Test Steps
+
+1. Open the product listing page.
+2. Make sure no category filter is selected.
+3. Enter `Hammer` in the search field.
+4. Trigger the search.
+5. Observe the displayed product count and product names.
+6. Open Chrome DevTools and select the Network tab.
+7. Inspect the GET request to `/products/search?q=Hammer`.
+8. Verify whether `Sledgehammer` is included in the API response and UI results.
+
+#### Expected Result
+
+The search should return all products whose names contain `hammer`, including `Sledgehammer`.
+
+The UI should display 7 matching products.
+
+#### Actual Result
+
+The search returned only 6 products.
+
+`Sledgehammer` was not included in the UI results.
+
+The API response for `q=Hammer` returned a total of 6 and did not include `Sledgehammer`.
+
+#### Notes
+
+Added in Cycle 2 after identifying incomplete partial keyword search results.
+
+This test verifies the search function without any category filter selected.
+
+Related bug: BUG-002.
+
+---
+
+### TC-SEARCH-013: Verify that the Hammer category filter displays all Hammer-category products
+
+* Related Scenario: TS-SEARCH-012
+* Module: Product Search
+* Priority: High
+* Test Data: Hammer category
+* Status: Pass
+* Test Cycle: Cycle 2
+* Test Date: 2026-06-22
+
+#### Precondition
+
+User is on the product listing page at https://practicesoftwaretesting.com/.
+
+#### Test Steps
+
+1. Open the product listing page.
+2. Locate the category filters on the left side of the page.
+3. Under Hand Tools, select the Hammer category checkbox.
+4. Observe the displayed product count and product names.
+5. Verify that `Sledgehammer` is included in the results.
+
+#### Expected Result
+
+The page should display 7 products belonging to the Hammer category.
+
+`Sledgehammer` should be included in the displayed results.
+
+#### Actual Result
+
+The page displayed 7 products after selecting the Hammer category filter.
+
+`Sledgehammer` was included in the displayed results.
+
+#### Notes
+
+Added in Cycle 2 to verify the Hammer category filter independently from the search function.
 
 No issue found.
