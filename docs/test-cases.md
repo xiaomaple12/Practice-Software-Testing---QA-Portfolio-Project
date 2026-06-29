@@ -12,41 +12,45 @@ Product Search
 
 This document contains detailed test cases for the Product Search module.
 
-Each test case includes test data, test steps, expected result, actual result, and execution status.
+Each test case includes test data, detailed test steps, expected results, actual results, execution status, and relevant investigation notes.
 
 ## Test Case Summary
 
-| Status | Count |
-|---|---:|
-| Passed | 8 |
-| Failed | 0 |
-| Blocked | 1 |
-| Need Clarification | 2 |
-| Total Test Cases | 11 |
+| Status             | Count |
+| ------------------ | ----: |
+| Passed             |     9 |
+| Failed             |     2 |
+| Blocked            |     0 |
+| Need Clarification |     2 |
+| Total Test Cases   |    13 |
 
-## Test Case List
+---
 
 ### TC-SEARCH-001: Search products by full product name
 
-- Related Scenario: TS-SEARCH-001
-- Module: Product Search
-- Priority: High
-- Test Data: Pliers
-- Status: Pass
+* Related Scenario: TS-SEARCH-001
+* Module: Product Search
+* Priority: High
+* Test Data: Pliers
+* Status: Pass
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter `Pliers` into the search input field.
-4. Click the Search button.
-5. Observe the search result title, result count, and displayed product cards.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Search section on the left side of the product listing page.
+3. Click the search input field.
+4. Enter `Pliers` into the search input field.
+5. Click the Search button.
+6. Observe the search result title.
+7. Observe the displayed result count.
+8. Review the names of all displayed product cards.
+9. Compare the displayed result count with the number of visible product cards.
 
 #### Expected Result
 
 The page should display search results related to `Pliers`.
 
-The result count should match the number of displayed products.
+The displayed result count should match the number of visible product cards.
 
 All displayed product names should contain or be related to the keyword `Pliers`.
 
@@ -64,55 +68,86 @@ All displayed product names contained the keyword `Pliers`.
 
 ### TC-SEARCH-002: Search products by partial keyword
 
-- Related Scenario: TS-SEARCH-002
-- Module: Product Search
-- Priority: High
-- Test Data: plier
-- Status: Pass
+* Related Scenario: TS-SEARCH-002
+* Module: Product Search
+* Priority: High
+* Test Data: `plier`, `ham`
+* Status: Pass
+* Test Cycle: Cycle 2
+* Test Date: 2026-06-29
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter `plier` into the search input field.
-4. Click the Search button.
-5. Observe the search result title, result count, and displayed product cards.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Search section on the left side of the product listing page.
+3. Click the search input field.
+4. Enter `plier` into the search input field.
+5. Click the Search button.
+6. Record the search result title.
+7. Record the displayed result count.
+8. Record the names of all displayed products.
+9. Click the Reset button to clear the search and restore the default product list.
+10. Confirm that the search field has been cleared.
+11. Enter `ham` into the search input field.
+12. Click the Search button.
+13. Record the search result title.
+14. Record the displayed result count.
+15. Record the names of all displayed products.
+16. Verify whether `Sledgehammer` is included in the results.
 
 #### Expected Result
 
-The page should display products related to the partial keyword `plier`.
+The page should display products related to each partial keyword.
 
-The search behavior should support partial keyword matching.
+The displayed result count should be greater than 0 for valid partial keywords.
 
-The displayed products should match the expected Pliers-related results.
+The displayed product names should contain or match the entered partial keyword regardless of letter casing.
+
+Searching for `ham` should include products whose names contain the matching text, including `Sledgehammer`.
 
 #### Actual Result
 
-The page displayed the same product results as searching for `Pliers`.
-
-4 products were displayed.
+Searching for `plier` displayed 4 products.
 
 The displayed products were Combination Pliers, Pliers, Long Nose Pliers, and Slip Joint Pliers.
 
-Search appears case-insensitive and partial keyword search works correctly.
+Searching for `ham` displayed 7 products.
+
+`Sledgehammer` was included in the `ham` search results.
+
+Both partial keywords successfully returned related products.
+
+#### Notes
+
+Partial keyword search is supported and worked correctly for both `plier` and `ham`.
+
+The `ham` result provides additional evidence that `Sledgehammer` can be returned through partial-string matching.
+
+However, searching for `Hammer` still excludes `Sledgehammer`.
+
+The inconsistent `Hammer` behavior remains covered by TC-SEARCH-012 and BUG-002.
 
 ---
 
 ### TC-SEARCH-003: Search with a non-existing product keyword
 
-- Related Scenario: TS-SEARCH-003
-- Module: Product Search
-- Priority: Medium
-- Test Data: abcdefg12345
-- Status: Pass
+* Related Scenario: TS-SEARCH-003
+* Module: Product Search
+* Priority: Medium
+* Test Data: abcdefg12345
+* Status: Pass
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter `abcdefg12345` into the search input field.
-4. Click the Search button.
-5. Observe the search result title, result count, product list area, and no-result message.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Search section on the left side of the product listing page.
+3. Click the search input field.
+4. Enter `abcdefg12345` into the search input field.
+5. Click the Search button.
+6. Observe the search result title.
+7. Observe the displayed result count.
+8. Review the product list area.
+9. Check whether a no-result message is displayed.
 
 #### Expected Result
 
@@ -136,59 +171,80 @@ The page displayed the message `There are no products found.`
 
 ### TC-SEARCH-004: Reset search results
 
-- Related Scenario: TS-SEARCH-004
-- Module: Product Search
-- Priority: High
-- Test Data: Pliers
-- Status: Pass
+* Related Scenario: TS-SEARCH-004
+* Module: Product Search
+* Priority: High
+* Test Data: Pliers
+* Status: Pass
+* Test Cycle: Cycle 2
+* Test Date: 2026-06-29
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter `Pliers` into the search input field.
-4. Click the Search button.
-5. Verify that Pliers-related search results are displayed.
-6. Click the Reset button.
-7. Observe the search input field, search result title, product list, and pagination.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Search section on the left side of the product listing page.
+3. Click the search input field.
+4. Enter `Pliers` into the search input field.
+5. Click the Search button.
+6. Verify that the search result title is displayed.
+7. Verify that Pliers-related product cards are displayed.
+8. Click the Reset button.
+9. Verify that the search input field is empty.
+10. Verify that the search result title is no longer displayed.
+11. Verify that the default product list is displayed again.
+12. Verify that the default pagination controls are displayed again.
 
 #### Expected Result
 
-The search field should be cleared.
+The search input field should be cleared after clicking Reset.
 
-The search result title should no longer be displayed.
+The active search result title should no longer be displayed.
 
-The product list should return to the default product listing view.
+The product list should return to the default product listing state.
 
-Pagination should be displayed again after reset.
+Product cards and pagination should be displayed again after Reset.
 
 #### Actual Result
 
-The search field was cleared after clicking the Reset button.
+After clicking Reset, the search input field was cleared.
 
-The search result title `Searched for: Pliers` was no longer displayed.
+The active search result title disappeared.
 
-The product list returned to the default product listing view.
+The product list returned to the default listing state.
 
-Pagination was displayed again after reset.
+Pagination was displayed again.
+
+No unexpected behavior was observed.
+
+#### Notes
+
+Focused Exploratory Testing reconfirmed that Reset clears the active search state and restores the default product list correctly.
+
+The result remained consistent with the earlier Cycle 2 test.
+
+This behavior is stable, has a clear expected result, and is suitable for future Regression Testing.
 
 ---
 
 ### TC-SEARCH-005: Trigger search by pressing Enter
 
-- Related Scenario: TS-SEARCH-005
-- Module: Product Search
-- Priority: High
-- Test Data: Hammer
-- Status: Pass
+* Related Scenario: TS-SEARCH-005
+* Module: Product Search
+* Priority: High
+* Test Data: Hammer
+* Status: Pass
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter `Hammer` into the search input field.
-4. Press the Enter key.
-5. Observe the search result title, result count, and displayed product cards.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Search section on the left side of the product listing page.
+3. Click the search input field.
+4. Enter `Hammer` into the search input field.
+5. Press the Enter key.
+6. Observe whether the search action is triggered.
+7. Observe the search result title.
+8. Observe the displayed result count.
+9. Review the displayed product cards.
 
 #### Expected Result
 
@@ -196,7 +252,7 @@ Pressing Enter should trigger the search action.
 
 The page should display search results related to `Hammer`.
 
-The result count should match the number of displayed products.
+The displayed result count should match the number of visible product cards.
 
 #### Actual Result
 
@@ -206,31 +262,46 @@ The page displayed `Searched for: Hammer`.
 
 The page displayed `6 products found for 'Hammer'`.
 
-Displayed products were Claw Hammer with Shock Reduction Grip, Hammer, Claw Hammer, Thor Hammer, Claw Hammer with Fiberglass Handle, and Court Hammer.
+The displayed products were Claw Hammer with Shock Reduction Grip, Hammer, Claw Hammer, Thor Hammer, Claw Hammer with Fiberglass Handle, and Court Hammer.
 
 ---
 
 ### TC-SEARCH-006: Search with multiple keywords
 
-- Related Scenario: TS-SEARCH-006
-- Module: Product Search
-- Priority: Low
-- Test Data: Hammer Pliers
-- Status: Need Clarification
+* Related Scenario: TS-SEARCH-006
+* Module: Product Search
+* Priority: Low
+* Test Data: Hammer Pliers
+* Status: Need Clarification
+* Test Cycle: Cycle 2
+* Test Date: 2026-06-29
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter `Hammer Pliers` into the search input field.
-4. Click the Search button.
-5. Observe the search result title, result count, product list area, and no-result message.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Search section on the left side of the product listing page.
+3. Click the search input field.
+4. Enter `Hammer Pliers` into the search input field.
+5. Click the Search button.
+6. Observe the search result title.
+7. Observe the displayed result count.
+8. Review the product list area.
+9. Check whether a no-result message is displayed.
+10. Record whether the observed result appears to use exact-phrase matching, AND logic, OR logic, or unsupported multiple-keyword behavior.
 
 #### Expected Result
 
-The expected behavior is not clearly defined.
+The system should process multiple search keywords according to a documented and consistent search rule.
 
-Need to clarify whether multiple keyword search should use AND logic, OR logic, exact phrase search, or unsupported behavior.
+If the system uses exact-phrase matching, it should return only products matching the complete phrase.
+
+If the system uses AND logic, it should return products matching both keywords.
+
+If the system uses OR logic, it should return products matching either keyword.
+
+If multiple-keyword search is unsupported, the user interface should clearly inform the user.
+
+Until the intended rule is confirmed, the result should remain Need Clarification rather than Pass or Fail.
 
 #### Actual Result
 
@@ -242,122 +313,162 @@ No product cards were displayed.
 
 The page displayed the message `There are no products found.`
 
-The current behavior appears to treat `Hammer Pliers` as an exact phrase search.
+The observed behavior may indicate exact-phrase matching or unsupported multiple-keyword input.
+
+The intended search rule cannot be confirmed from the current requirements.
 
 #### Notes
 
-This test case should be confirmed with PM / PO / BA before marking it as Pass or Fail.
+The product requirement does not define whether multiple keywords should use AND logic, OR logic, exact-phrase matching, or unsupported behavior.
+
+The current result must not be classified as a Functional Bug until the expected behavior is confirmed.
+
+The intended search rule should be confirmed with the Product Owner, Product Manager, Business Analyst, or requirement documentation.
+
+If multiple-keyword input is unsupported, the user interface should provide a clear instruction or validation message.
 
 ---
 
 ### TC-SEARCH-007: Search with different letter casing
 
-- Related Scenario: TS-SEARCH-007
-- Module: Product Search
-- Priority: Medium
-- Test Data: hammer
-- Status: Pass
+* Related Scenario: TS-SEARCH-007
+* Module: Product Search
+* Priority: Medium
+* Test Data: `Hammer`, `hammer`, `HAMMER`
+* Status: Pass
+* Test Cycle: Cycle 2
+* Test Date: 2026-06-29
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter `hammer` in lowercase into the search input field.
-4. Click the Search button.
-5. Observe the search result title, result count, and displayed product cards.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Search section on the left side of the product listing page.
+3. Click the search input field.
+4. Enter `Hammer` into the search input field.
+5. Click the Search button.
+6. Record the result count and displayed product names.
+7. Click Reset to clear the search and restore the default product list.
+8. Enter `hammer` into the search input field.
+9. Click the Search button.
+10. Record the result count and displayed product names.
+11. Click Reset again.
+12. Enter `HAMMER` into the search input field.
+13. Click the Search button.
+14. Record the result count and displayed product names.
+15. Compare the result counts and displayed product names from all three searches.
 
 #### Expected Result
 
-The search should not be affected by keyword letter casing.
+The search should be case-insensitive.
 
-Searching for `hammer` should return the same results as searching for `Hammer`.
+Searching for `Hammer`, `hammer`, and `HAMMER` should return the same result count.
 
-The page should display Hammer-related products.
+All three searches should return the same product list.
+
+The displayed products should be related to the Hammer keyword.
 
 #### Actual Result
 
-The page displayed `Searched for: hammer`.
+Searching for `Hammer`, `hammer`, and `HAMMER` returned the same 6 products.
 
-The page displayed the same product results as TC-SEARCH-005 using `Hammer`.
+The displayed products were Claw Hammer with Shock Reduction Grip, Hammer, Claw Hammer, Thor Hammer, Claw Hammer with Fiberglass Handle, and Court Hammer.
 
-The page displayed 6 Hammer-related products.
-
-Displayed products were Claw Hammer with Shock Reduction Grip, Hammer, Claw Hammer, Thor Hammer, Claw Hammer with Fiberglass Handle, and Court Hammer.
+The result count and product names were consistent across all three letter-case variations.
 
 #### Notes
 
-Search behavior appears case-insensitive.
+Focused Exploratory Testing confirmed that Product Search handles uppercase, lowercase, and title-case keywords consistently.
+
+The result remained consistent with the earlier Cycle 2 test.
+
+This behavior is stable and suitable for future Regression Testing.
 
 ---
 
 ### TC-SEARCH-008: Search with leading and trailing spaces
 
-- Related Scenario: TS-SEARCH-008
-- Module: Product Search
-- Priority: Medium
-- Test Data: ` hammer `
-- Status: Pass
+* Related Scenario: TS-SEARCH-008
+* Module: Product Search
+* Priority: Medium
+* Test Data: `[space]Hammer`, `Hammer[space]`, `[space]Hammer[space]`, `Hammer`
+* Status: Pass
+* Test Cycle: Cycle 2
+* Test Date: 2026-06-29
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter ` hammer ` into the search input field with one leading space and one trailing space.
-4. Click the Search button.
-5. Observe the search result title, result count, and displayed product cards.
-6. Compare the results with TC-SEARCH-007.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Search section on the left side of the product listing page.
+3. Click the search input field.
+4. Enter one leading space followed by `Hammer`.
+5. Click the Search button.
+6. Record the result count and displayed product names.
+7. Click Reset to clear the search and restore the default product list.
+8. Enter `Hammer` followed by one trailing space.
+9. Click the Search button.
+10. Record the result count and displayed product names.
+11. Click Reset again.
+12. Enter one leading space, `Hammer`, and one trailing space.
+13. Click the Search button.
+14. Record the result count and displayed product names.
+15. Click Reset again.
+16. Enter `Hammer` without any extra spaces.
+17. Click the Search button.
+18. Record the result count and displayed product names.
+19. Compare the result counts and product names from all four searches.
 
 #### Expected Result
 
-The search input should handle leading and trailing spaces correctly.
+The system should ignore leading and trailing spaces in the search keyword.
 
-The result should not be affected by extra spaces before or after the keyword.
+Searching with a leading space, a trailing space, or both leading and trailing spaces should return the same result count and product list as searching for `Hammer` without spaces.
 
-Searching for ` hammer ` should return the same results as searching for `hammer`.
+The search should not fail only because extra spaces appear before or after the keyword.
 
 #### Actual Result
 
-The page handled the input with one leading space and one trailing space.
+Searching with one leading space before `Hammer`, one trailing space after `Hammer`, and spaces on both sides returned the same 6 products as searching for `Hammer` without spaces.
 
-The search results were the same as searching for `hammer` without spaces.
+The result counts and displayed product names were identical in all four searches.
 
-The page displayed 6 Hammer-related products.
-
-The displayed products matched the results from TC-SEARCH-007.
+The system successfully ignored the extra leading and trailing spaces.
 
 #### Notes
 
-The actual input is ` hammer ` with one leading space and one trailing space.
+Focused Exploratory Testing confirmed that Product Search trims leading and trailing spaces consistently.
 
-This test verifies whether the search input trims leading and trailing spaces.
+The behavior remained consistent with the earlier Cycle 2 test.
 
-The search input appears to trim leading and trailing spaces.
-
-No issue found.
+This is stable behavior with a clear expected result and is suitable for future Regression Testing.
 
 ---
 
 ### TC-SEARCH-009: Search with localized keyword
 
-- Related Scenario: TS-SEARCH-009
-- Module: Product Search
-- Priority: Low
-- Test Data: 鉗子
-- Status: Need Clarification
+* Related Scenario: TS-SEARCH-009
+* Module: Product Search
+* Priority: Low
+* Test Data: 鉗子
+* Status: Need Clarification
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter `鉗子` into the search input field.
-4. Click the Search button.
-5. Observe the search result title, result count, product list area, and no-result message.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Search section on the left side of the product listing page.
+3. Click the search input field.
+4. Enter `鉗子` into the search input field.
+5. Click the Search button.
+6. Observe the search result title.
+7. Observe the displayed result count.
+8. Review the product list area.
+9. Check whether a no-result message is displayed.
+10. Compare the behavior with a non-existing English keyword search.
 
 #### Expected Result
 
 The expected behavior for localized keyword search is not clearly defined.
 
-Need to clarify whether localized keyword search should be supported.
+The requirement should clarify whether localized keyword search is supported.
 
 If localized search is not supported, the system should still provide clear feedback or consistent no-result behavior.
 
@@ -375,9 +486,9 @@ The product list remained in the default product listing view.
 
 #### Notes
 
-Current behavior is different from searching a non-existing English keyword.
+The current behavior is different from searching with a non-existing English keyword.
 
-This test case should be confirmed with PM / PO / BA before marking it as Pass or Fail.
+The expected behavior should be confirmed before this test case is marked as Pass or Fail.
 
 ---
 
@@ -389,23 +500,32 @@ This test case should be confirmed with PM / PO / BA before marking it as Pass o
 * Test Data: Hammer category filter and search keyword `hammer`
 * Status: Fail
 * Test Cycle: Cycle 2
-* Test Date: 2026-06-22
+* Test Date: 2026-06-29
 
 #### Precondition
 
-User is on the product listing page at https://practicesoftwaretesting.com/.
+The user is on the Practice Software Testing product listing page.
+
+No search keyword is currently active.
 
 #### Test Steps
 
-1. Open the product listing page.
+1. Open the Practice Software Testing product listing page.
 2. Locate the Filters section on the left side of the page.
-3. Under By category, find Hand Tools.
-4. Select the Hammer category checkbox.
-5. Verify that 7 Hammer-category products are displayed, including `Sledgehammer`.
-6. Keep the Hammer category selected.
-7. Enter `hammer` into the search input field.
-8. Trigger the search.
-9. Observe the displayed product count and product names.
+3. Locate the By category section.
+4. Expand Hand Tools if the category list is collapsed.
+5. Select the Hammer category checkbox.
+6. Wait for the filtered product list to load.
+7. Verify that 7 Hammer-category products are displayed.
+8. Verify that `Sledgehammer` is included in the category-filtered results.
+9. Keep the Hammer category checkbox selected.
+10. Locate the Search section on the left side of the page.
+11. Enter `hammer` into the search input field.
+12. Click the Search button.
+13. Wait for the combined filter results to load.
+14. Record the displayed result count.
+15. Record the names of all displayed products.
+16. Verify whether `Sledgehammer` remains included in the combined results.
 
 #### Expected Result
 
@@ -413,7 +533,7 @@ The page should display products that satisfy both the selected Hammer category 
 
 All matching Hammer-category products whose names contain `hammer` should be displayed.
 
-`Sledgehammer` should be included in the combined filter results.
+`Sledgehammer` should be included in the combined results.
 
 #### Actual Result
 
@@ -427,13 +547,11 @@ The combined filtering result was incomplete.
 
 #### Notes
 
-Retested in Cycle 2.
-
-The Hammer category filter initially displayed 7 products, including `Sledgehammer`.
+The Hammer category filter independently displayed 7 products, including `Sledgehammer`.
 
 When `hammer` was searched while the Hammer category remained selected, only 6 products were displayed.
 
-`Sledgehammer` was missing from the combined filter results.
+The missing product behavior is related to the Search API result rather than the category data.
 
 Related bug: BUG-002.
 
@@ -447,24 +565,28 @@ Related bug: BUG-002.
 * Test Data: Pliers
 * Status: Pass
 * Test Cycle: Cycle 2
-* Test Date: 2026-06-22
+* Test Date: 2026-06-29
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the search input field at the top of the product list.
-3. Enter `Pliers` into the search input field.
-4. Click the Search button.
-5. Observe the search result count.
-6. Observe whether pagination is displayed after the search results are loaded.
+1. Open the Practice Software Testing product listing page.
+2. Confirm that the default product list and pagination are displayed.
+3. Locate the Search section on the left side of the product listing page.
+4. Enter `Pliers` into the search input field.
+5. Click the Search button.
+6. Wait for the search results to load.
+7. Observe the displayed result count.
+8. Count the visible product cards.
+9. Check whether pagination is displayed after the search results are loaded.
+10. Compare the pagination state with the number of search results.
 
 #### Expected Result
 
 The page should display Pliers-related products.
 
-If the search results fit on one page, pagination should not be displayed.
+If all search results fit on one page, pagination should not be displayed.
 
-Pagination should be updated correctly based on the search result count.
+Pagination should update correctly according to the number of search results.
 
 #### Actual Result
 
@@ -472,15 +594,15 @@ The page displayed `4 products found for 'Pliers'`.
 
 All displayed products were related to Pliers.
 
-No pagination was displayed after the search results were loaded.
+No pagination was displayed after the search results loaded.
 
 The search results fit on one page.
 
 #### Notes
 
-Retested in Cycle 2.
+The result remained consistent during Cycle 2.
 
-Result remained consistent with Cycle 1.
+No issue was identified.
 
 ---
 
@@ -489,43 +611,71 @@ Result remained consistent with Cycle 1.
 * Related Scenario: TS-SEARCH-002
 * Module: Product Search
 * Priority: High
-* Test Data: Hammer
+* Test Data: `Hammer`, `ham`
 * Status: Fail
 * Test Cycle: Cycle 2
-* Test Date: 2026-06-22
+* Test Date: 2026-06-29
 
 #### Precondition
 
-User is on the product listing page at https://practicesoftwaretesting.com/.
+The user is on the Practice Software Testing product listing page.
+
+No category filter is selected.
+
+Chrome DevTools is available for Network request inspection.
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Make sure no category filter is selected.
-3. Enter `Hammer` in the search field.
-4. Trigger the search.
-5. Observe the displayed product count and product names.
-6. Open Chrome DevTools and select the Network tab.
-7. Inspect the GET request to `/products/search?q=Hammer`.
-8. Verify whether `Sledgehammer` is included in the API response and UI results.
+1. Open the Practice Software Testing product listing page.
+2. Confirm that no category filter is selected.
+3. Locate the Search section on the left side of the product listing page.
+4. Enter `Hammer` into the search input field.
+5. Click the Search button.
+6. Wait for the search results to load.
+7. Record the displayed result count.
+8. Record the names of all displayed products.
+9. Verify whether `Sledgehammer` is included in the UI results.
+10. Open Chrome DevTools by pressing F12.
+11. Select the Network tab.
+12. Repeat the search for `Hammer`.
+13. Select the GET request to `/products/search?q=Hammer`.
+14. Inspect the response body.
+15. Verify whether the API response includes `Sledgehammer`.
+16. Click Reset to clear the search and restore the default product list.
+17. Enter `ham` into the search input field.
+18. Click the Search button.
+19. Wait for the search results to load.
+20. Record the displayed result count.
+21. Verify whether `Sledgehammer` is included in the `ham` results.
+22. Compare the results for `Hammer` and `ham`.
 
 #### Expected Result
 
-The search should return all products whose names contain `hammer`, including `Sledgehammer`.
+Searching for `Hammer` should return all products whose names contain the matching search text, including `Sledgehammer`.
 
 The UI should display 7 matching products.
 
+The Search API response should include `Sledgehammer`.
+
+Searching for the related partial keyword `ham` should follow the same documented matching rule and return consistent results.
+
 #### Actual Result
 
-The search returned only 6 products.
+Searching for `Hammer` returned only 6 products.
 
 `Sledgehammer` was not included in the UI results.
 
-The API response for `q=Hammer` returned a total of 6 and did not include `Sledgehammer`.
+The API response for `q=Hammer` returned a total of 6 products and did not include `Sledgehammer`.
+
+Searching for `ham` returned 7 products and included `Sledgehammer`.
+
+The results were inconsistent because the shorter partial keyword `ham` found `Sledgehammer`, while `Hammer` did not.
 
 #### Notes
 
-Added in Cycle 2 after identifying incomplete partial keyword search results.
+Additional Exploratory Testing confirmed that partial-string searching is supported because `ham` successfully returned 7 products, including `Sledgehammer`.
+
+The new evidence suggests an inconsistency in the backend search matching logic rather than a general lack of partial-string support.
 
 This test verifies the search function without any category filter selected.
 
@@ -541,19 +691,26 @@ Related bug: BUG-002.
 * Test Data: Hammer category
 * Status: Pass
 * Test Cycle: Cycle 2
-* Test Date: 2026-06-22
+* Test Date: 2026-06-29
 
 #### Precondition
 
-User is on the product listing page at https://practicesoftwaretesting.com/.
+The user is on the Practice Software Testing product listing page.
+
+No search keyword is currently active.
 
 #### Test Steps
 
-1. Open the product listing page.
-2. Locate the category filters on the left side of the page.
-3. Under Hand Tools, select the Hammer category checkbox.
-4. Observe the displayed product count and product names.
-5. Verify that `Sledgehammer` is included in the results.
+1. Open the Practice Software Testing product listing page.
+2. Locate the Filters section on the left side of the page.
+3. Locate the By category section.
+4. Expand Hand Tools if the category list is collapsed.
+5. Select the Hammer category checkbox.
+6. Wait for the filtered product list to load.
+7. Record the displayed result count.
+8. Record the names of all displayed products.
+9. Verify that 7 Hammer-category products are displayed.
+10. Verify that `Sledgehammer` is included in the results.
 
 #### Expected Result
 
@@ -569,6 +726,8 @@ The page displayed 7 products after selecting the Hammer category filter.
 
 #### Notes
 
-Added in Cycle 2 to verify the Hammer category filter independently from the search function.
+This test verifies the Hammer category filter independently from the search function.
 
-No issue found.
+The category data and frontend display can return `Sledgehammer` correctly.
+
+No issue was identified.
