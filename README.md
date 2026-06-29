@@ -56,7 +56,7 @@ Related notes:
 
 | Result Type        | Count |
 | ------------------ | ----: |
-| Total Scenarios    |    12 |
+| Total Scenarios    |    13 |
 | Total Test Cases   |    13 |
 | Passed             |     9 |
 | Failed             |     2 |
@@ -66,9 +66,11 @@ Related notes:
 
 Cycle 2 preserved the original test-cycle history instead of overwriting Cycle 1 results.
 
+A focused Product Search exploratory session was later completed to investigate keyword formatting, partial matching, minimum search length, multiple-keyword behavior, and Reset behavior.
+
 ## Key Findings
 
-The following Product Search behaviors remained stable during Cycle 2:
+The following Product Search behaviors remained stable during Cycle 2 and focused Exploratory Testing:
 
 * Full keyword search
 * Partial keyword search for common product names
@@ -79,26 +81,42 @@ The following Product Search behaviors remained stable during Cycle 2:
 * Leading and trailing space handling
 * Pagination update
 
+Case-insensitive testing confirmed that `Hammer`, `hammer`, and `HAMMER` returned the same 6 products.
+
+Search input trimming was also confirmed. A leading space, a trailing space, and spaces on both sides of `Hammer` returned the same results as entering `Hammer` without spaces.
+
+Reset correctly cleared the search field, removed the active search title, and restored the default product list and pagination.
+
 The Hammer category filter independently displayed 7 products correctly, including `Sledgehammer`.
 
 However, searching for `Hammer` returned only 6 products and excluded `Sledgehammer`.
 
-The same incomplete result occurred when the Hammer category filter remained selected and `hammer` was entered in the search field.
+Additional exploratory evidence showed that searching for `ham` returned 7 products and included `Sledgehammer`.
+
+Searching directly for `Sledgehammer` also returned the product successfully.
+
+This result strengthens BUG-002 because partial-string matching is supported, but the Search API produces inconsistent results for the related terms `ham` and `Hammer`.
 
 Chrome DevTools Network evidence confirmed that:
 
 * The request method was `GET`.
-* The request URL was `/products/search?q=Hammer`.
+* The request URL included `/products/search?q=Hammer`.
 * The response status was `200 OK`.
-* The response total was 6.
-* `Sledgehammer` was not included in the API response.
+* The response total for `q=Hammer` was 6.
+* `Sledgehammer` was not included in the `q=Hammer` API response.
+* The response for `q=ham` returned 7 products and included `Sledgehammer`.
 
-This indicates that the incomplete result originates from the Search API response rather than the frontend product display.
+This indicates that the incomplete result originates from inconsistent Search API matching logic rather than the frontend product display or a general lack of partial-string support.
 
-Two behaviors still require clarification:
+The following behaviors still require clarification:
 
-* Multiple keyword search
+* Multiple-keyword search
 * Localized keyword search
+* Minimum number of characters required to trigger a search
+
+Testing showed that 1-character and 2-character search terms did not trigger a search, while a 3-character term did.
+
+Because the formal requirement is not documented and the UI does not explain the apparent minimum, this finding is recorded as Need Clarification and a Coverage Gap rather than a Functional Bug.
 
 ## Bug Reports
 
@@ -140,13 +158,30 @@ The project includes automation scope planning to identify which test cases are 
 
 | Automation Candidate    | Count |
 | ----------------------- | ----: |
-| Suitable for automation |     9 |
+| Suitable for automation |     8 |
 | Not recommended yet     |     2 |
 | Waiting for bug fix     |     2 |
 
+Stable regression candidates include:
+
+* Full keyword search
+* Partial keyword search
+* Non-existing keyword search
+* Reset behavior
+* Enter key search
+* Case-insensitive search
+* Leading and trailing space handling
+* Pagination after search
+
+Multiple-keyword search and localized keyword search are not recommended for automation until their expected behavior is clarified.
+
+The minimum search character behavior is also excluded from automation because there is no confirmed requirement or formal Test Case yet.
+
 TC-SEARCH-010 and TC-SEARCH-012 should be manually retested after BUG-002 is fixed before they are added to the automated regression suite.
 
-TC-SEARCH-012 is also suitable for future API response validation because the issue can be verified through both the UI and the Search API response.
+TC-SEARCH-012 is suitable for future UI and API response validation because the expected result can be checked through both the displayed product list and the Search API response.
+
+The current incorrect behavior must not be recorded as the automated expected baseline.
 
 ## Skills Demonstrated
 
