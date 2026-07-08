@@ -8,6 +8,53 @@ The goal is to demonstrate a complete QA workflow based on the STLC process, inc
 
 Website under test: https://practicesoftwaretesting.com/
 
+## QA Portfolio Project Summary
+
+This project was conducted on the Practice Software Testing website using the official Testing Guide as the primary test basis.
+
+A total of 117 Testing Guide Review records were created, covering major user flows such as registration, login, password management, favorites, invoices, messages, locked account, multi-factor authentication, search, contact form, product listing, category page, product detail page, shopping cart, checkout and payment, geolocation discount, and combined product discount.
+
+### Final Coverage Status
+
+| Coverage Status | Count |
+|---|---:|
+| Pass | 85 |
+| Fail | 7 |
+| Need Clarification | 18 |
+| Not Testable | 4 |
+| Coverage Gap | 3 |
+| Total | 117 |
+
+### Bug Report Summary
+
+A total of 7 bug reports were created during the project.
+
+Among them, 4 were selected as portfolio-ready formal bug reports with clearer naming, reproducible steps, issue classification, severity, priority, and supporting observations.
+
+The remaining 3 were early-stage practice bug reports used during the learning and documentation process.
+
+### Portfolio-ready Formal Bug Reports
+
+- BUG-MFA-001：TOTP reuse allowed during the same validity window
+- BUG-MFA-002：MFA settings page cannot load existing setup details or provide reset / disable options
+- BUG-CONTACT-001：Contact Form validation behavior issue supported by multiple Contact Form review records
+- BUG-CAT-001：Category Page filtering behavior issue
+
+### Candidate Issues and Requirement Clarifications
+
+In addition to confirmed failures, the project also documented candidate issues, requirement clarification items, test data gaps, and not-testable scenarios.
+
+Main categories included:
+
+- Registration validation feedback and boundary behavior
+- Contact Form testability and requirement mismatch
+- Checkout and Payment UX / validation behavior
+- Geolocation Discount test data gap
+- Discount and invoice validation testability
+- Product listing / category navigation state behavior
+
+This helped avoid premature defect classification when the expected behavior, test oracle, account condition, or required test data was unclear.
+
 ## Tested Module
 
 Product Search
