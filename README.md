@@ -122,16 +122,7 @@ Earlier test cycles were preserved as part of the project history.
 
 The final Testing Guide Review was later expanded to cover the full official Testing Guide, resulting in 117 review records.
 
-### Final Result
-
-| Coverage Status | Count |
-|---|---:|
-| Pass | 85 |
-| Fail | 7 |
-| Need Clarification | 18 |
-| Not Testable | 4 |
-| Coverage Gap | 3 |
-| Total | 117 |
+The final coverage status is summarized in the QA Portfolio Project Summary section above.
 
 ---
 
@@ -278,4 +269,4 @@ The current incorrect behavior must not be recorded as the automated expected ba
 
 ## Additional Reference
 
-- Google Sheets test execution record
+- [Google Sheets test execution record](https://docs.google.com/spreadsheets/d/1RmrleJbF3qIx1X96Wy92Uo6Qf9AFELIoypBviZyopjo/edit?usp=sharing)
